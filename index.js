@@ -1,7 +1,7 @@
 const express = require('express')
 
 const app = express()
-const PORT = 5000
+const PORT = 5200
 
 app.set('view engine', 'hbs') // set hbs
 
@@ -20,9 +20,9 @@ app.get('/blog', function(request, response) {
 })
 
 app.get('/blog-detail/:id', function(request, response) {
-    // console.log(req.params);
+    // console.log(request.params);
     
-    let blogId = req.params.id
+    let blogId = request.params.id
     res.render('blog-detail', {blog : {
         id : blogId,
         title: 'Selamat datang di web personal',
@@ -52,10 +52,6 @@ app.post('/blog', function(request, response) {
     });
 })
 
-
-
-
-
 app.listen(PORT, function() {
-    console.log(`Server starting on PORT ${PORT}`);
+    console.log(`Server starting on PORT`);
 })
