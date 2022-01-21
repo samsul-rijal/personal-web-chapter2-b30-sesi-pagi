@@ -5,7 +5,7 @@ const flash = require('express-flash')
 const session = require('express-session')
 
 const app = express()
-const PORT = 5000
+const PORT = process.env.PORT || 5000
 
 const db = require('./connection/db')
 const upload = require('./middlewares/fileUpload') 
